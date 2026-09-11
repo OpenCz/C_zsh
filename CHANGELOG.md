@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.3-alpha](https://github.com/OpenCz/C_zsh/compare/v1.0.2...v1.0.3-alpha) (2026-09-11)
+
+
+* release 1.0.3-alpha ([3026fe6](https://github.com/OpenCz/C_zsh/commit/3026fe61baed4441b8728293d9319b984c0a39eb))
+
+
+### Bug Fixes
+
+* update release creation join staging release & stable release ([ca86ad2](https://github.com/OpenCz/C_zsh/commit/ca86ad247fde18965b5ad2be12a246fb1d37ae8a))
+
 ## [1.0.2](https://github.com/OpenCz/C_zsh/compare/v1.0.1...v1.0.2) (2026-08-26)
 
 
