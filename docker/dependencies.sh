@@ -1,23 +1,37 @@
 #!/bin/sh
 
-apk add --no-cache clang20 clang20-rtlib git make build-base cmake meson ninja libffi-dev libgit2-dev cargo
+set -e
 
-git clone https://github.com/lukas-sgx/Epifaster.git
-git clone https://github.com/Snaipe/Criterion
+apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    clang-20 \
+    libclang-rt-20-dev \
+    git \
+    make \
+    build-essential \
+    cmake \
+    libffi-dev \
+    libgit2-dev \
+    cargo \
+    gh \
+    libcriterion-dev
 
-cd /app/Criterion
-meson setup build
-ninja -C build
-ninja -C build install
-mv /usr/local/include/criterion /usr/include/
-ldconfig /usr/lib
+update-ca-certificates
 
-cd /app/Epifaster
-ln -s /usr/bin/clang-20 /usr/bin/clang
+mkdir -p /app
+cd /app
+git clone https://github.com/EpiSDK/EpiFaster.git
+
+cd /app/EpiFaster
+ln -sf /usr/bin/clang-20 /usr/bin/clang
 ./setup.sh
 
 cd /app
-mv banana-check-repo.sh /github/home/.local/bin/banana-check-repo
+mkdir -p /github/home/.local/bin
+cp banana-check-repo.sh /github/home/.local/bin/banana-check-repo
+ln -sf /app/EpiFaster/target/release/epiclang /usr/bin/epiclang
 
-apk del git build-base meson ninja cargo
-rm -rf /app/Epifaster/.git /var/cache/apk/* /app/Criterion $HOME/.cargo $HOME/.rustup /root/.cargo /root/.rustup
+apt-get purge -y build-essential cargo
+apt-get autoremove -y
+apt-get clean
+rm -rf /app/EpiFaster/.git /var/lib/apt/lists/* "$HOME/.cargo" "$HOME/.rustup" /root/.cargo /root/.rustup

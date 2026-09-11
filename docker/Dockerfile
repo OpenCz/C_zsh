@@ -1,4 +1,4 @@
-FROM alpine
+FROM ubuntu:latest
 LABEL maintainer="Lukas Soigneux <lukas.soigneux@epitech.eu>"
 
 WORKDIR /app
@@ -6,7 +6,7 @@ WORKDIR /app
 ENV HOME=/github/home
 ENV PATH=/github/home/.local/bin:$PATH
 
-COPY dependencies.sh /app/ 
+COPY ./dependencies.sh /app/
 COPY banana-check-repo.sh /app/
 
-RUN ./dependencies.sh
+RUN chmod +x /app/dependencies.sh && /bin/sh /app/dependencies.sh

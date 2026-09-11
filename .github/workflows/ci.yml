@@ -19,30 +19,8 @@ env:
   CC: epiclang
 
 jobs:
-  check_mirror:
-    environment: production
-    runs-on: ubuntu-latest
-
-    outputs:
-      is_mirror: ${{ steps.check.outputs.is_mirror }}
-
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-      - id: check
-        run: |
-          ORIGIN=$(git remote get-url origin)
-          ORIGIN=$(echo $ORIGIN | sed 's|https://github.com|git@github.com:|; s|$|.git|')
-          ORIGIN=$(echo $ORIGIN | sed 's/com:\//com:/')
-
-          echo "is_mirror=$( [ "$ORIGIN" = "$MIRROR_SSH_URL" ] && echo true || echo false )" >> $GITHUB_OUTPUT
-
   check_compilation_and_coding_style:
-    needs: check_mirror
-    if:
-      needs.check_mirror.outputs.is_mirror == 'false'
-    environment: production
+    environment: tests
     runs-on: ubuntu-latest
     container:
       image: lukassgx/epi-docker:tek1-extended
@@ -142,12 +120,10 @@ jobs:
           done
         
   run_tests:
-    environment: production
     runs-on: ubuntu-latest
     container:
       image: lukassgx/epi-docker:tek1-extended
     needs:
-      - check_mirror
       - check_compilation_and_coding_style
     steps:
       - uses: actions/checkout@v7
@@ -214,22 +190,3 @@ jobs:
                     exit 0
                 fi
             }
-
-  
-  push_to_mirror:
-    if: github.ref == 'refs/heads/stable' && github.event_name == 'push'
-    needs:
-      - check_mirror
-      - run_tests
-    environment: production
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-      - uses: pixta-dev/repository-mirroring-action@v1
-        with:
-          target_repo_url: ${{ vars.MIRROR_SSH_URL }}
-          ssh_private_key: ${{ secrets.PRIVATE_SSH_KEY }}
-          ssh_username: git

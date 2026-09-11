@@ -1,5 +1,52 @@
 # Changelog
 
+## [1.0.2](https://github.com/OpenCz/C_zsh/compare/v1.0.1...v1.0.2) (2026-08-26)
+
+
+* release 1.0.2 ([d726923](https://github.com/OpenCz/C_zsh/commit/d726923f52575c30d74590a4074ec5895c7601db))
+* release 1.0.2 ([f92dc3d](https://github.com/OpenCz/C_zsh/commit/f92dc3da6b4de8c2069b00f8cd02508e1144d5cb))
+
+## [1.0.1](https://github.com/OpenCz/C_zsh/compare/v1.0.0...v1.0.1) (2026-08-21)
+
+
+* release 1.0.1 ([2e85cd3](https://github.com/OpenCz/C_zsh/commit/2e85cd3a0171995c3cd04c63b7337a39cba5a6e6))
+
+## [1.0.0](https://github.com/OpenCz/C_zsh/compare/v1.0.0-unstable-21082026-3...v1.0.0) (2026-08-21)
+
+
+* release 1.0.0 ([f191209](https://github.com/OpenCz/C_zsh/commit/f1912097c51670a723fa28e2ccce95230ee7921c))
+
+## [1.0.0-unstable-21082026-3](https://github.com/OpenCz/C_zsh/compare/v1.0.0-unstable-21082026-2...v1.0.0-unstable-21082026-3) (2026-08-21)
+
+
+* release 1.0.0-unstable-21082026-3 ([07824f2](https://github.com/OpenCz/C_zsh/commit/07824f22f18baf9b03aa8e3954406822c4278af5))
+
+
+### New APIs / Features
+
+* add safe directory ([178b823](https://github.com/OpenCz/C_zsh/commit/178b8234d4be210afc7cca7f9228ae25d4c42952))
+
+## [1.0.0-unstable-21082026-2](https://github.com/OpenCz/C_zsh/compare/v1.0.0-unstable-21082026...v1.0.0-unstable-21082026-2) (2026-08-21)
+
+
+* release 1.0.0-unstable-21082026-2 ([2ffa696](https://github.com/OpenCz/C_zsh/commit/2ffa696eab9374d9d8aaf8d4419f33612342cb60))
+
+
+### Bug Fixes
+
+* update environment right ([5671a3e](https://github.com/OpenCz/C_zsh/commit/5671a3ebd90ad3301aac4003454d51a11cd96668))
+* update ssl certificates ([31fc844](https://github.com/OpenCz/C_zsh/commit/31fc844eaf48564ed9a59ef402218b407e23e9c4))
+
+## [1.0.0-unstable-21082026](https://github.com/OpenCz/C_zsh/compare/v1.0.0-unstable-20082026...v1.0.0-unstable-21082026) (2026-08-21)
+
+
+* release 1.0.0-unstable-21082026 ([c53ce74](https://github.com/OpenCz/C_zsh/commit/c53ce7459e22a14fb4d40af23f716d4cbba6ce7d))
+
+
+### New APIs / Features
+
+* switch to ubuntu container ([b95049d](https://github.com/OpenCz/C_zsh/commit/b95049dd31524943c010908d3bf2bf8f99aace4c))
+
 ## 1.0.0-unstable-20082026 (2026-08-20)
 
 
