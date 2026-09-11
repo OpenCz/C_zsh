@@ -1,4 +1,4 @@
-name: CI
+name: czsh - CI
 
 on:
   push:
