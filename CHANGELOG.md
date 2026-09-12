@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.4](https://github.com/OpenCz/C_zsh/compare/v1.0.4-alpha...v1.0.4) (2026-09-12)
+
+
+* release 1.0.4 ([04dddea](https://github.com/OpenCz/C_zsh/commit/04dddea6f229ee000d43eca44e769016bdc56953))
+
 ## [1.0.4-alpha](https://github.com/OpenCz/C_zsh/compare/v1.0.3-alpha...v1.0.4-alpha) (2026-09-12)
 
 
