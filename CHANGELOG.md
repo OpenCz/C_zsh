@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4-alpha](https://github.com/OpenCz/C_zsh/compare/v1.0.3-alpha...v1.0.4-alpha) (2026-09-12)
+
+
+### Bug Fixes
+
+* **ci-cd:** set container in bad job ([c943ffe](https://github.com/OpenCz/C_zsh/commit/c943ffe96445b2658b045d3585ec69c8b0bee793))
+
 ## [1.0.3-alpha](https://github.com/OpenCz/C_zsh/compare/v1.0.2...v1.0.3-alpha) (2026-09-11)
 
 
