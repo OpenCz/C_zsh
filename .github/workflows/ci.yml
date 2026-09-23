@@ -152,7 +152,7 @@ jobs:
           name: 42sh
           path: ./
   
-      - uses: Ximaz/valgrind-action@v1.2.0
+      - uses: Ximaz/valgrind-action@v1.2.1
         with:
           binary_path: "./42sh"
   open_pull_request:
