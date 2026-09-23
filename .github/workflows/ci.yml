@@ -118,6 +118,13 @@ jobs:
             fi
             [ -z "$list" ] && break
           done
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: 42sh
+          path: 42sh
+          retention-days: 5
         
   run_tests:
     runs-on: ubuntu-latest
@@ -132,11 +139,26 @@ jobs:
       - name: testers
         run: make tests_run
         timeout-minutes: 2
+    
+  check_leaks:
+    runs-on: ubuntu-latest
+    needs:
+        - run_tests
+
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v8
+        with:
+          name: 42sh
+          path: ./
   
+      - uses: Ximaz/valgrind-action@v1.2.1
+        with:
+          binary_path: "./42sh"
   open_pull_request:
       if: (github.ref_name == 'develop' || github.ref_name == 'main') && github.event_name == 'push'
       needs:
-        - run_tests
+        - check_leaks
       runs-on: ubuntu-latest
       permissions:
         pull-requests: write
