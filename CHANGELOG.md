@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/OpenCz/C_zsh/compare/v1.0.4...v1.1.0) (2026-10-13)
+
+
+### New APIs / Features
+
+* **ci-cd:** add valgrind checker ([878f8c0](https://github.com/OpenCz/C_zsh/commit/878f8c0d6816caf976fd352ed341815dc4007fda))
+
 ## [1.0.4](https://github.com/OpenCz/C_zsh/compare/v1.0.4-alpha...v1.0.4) (2026-09-12)
 
 
