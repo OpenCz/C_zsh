@@ -6,7 +6,6 @@ on:
     types: [completed]
     branches:
       - stable
-      - staging
 
 env:
   MIRROR_SSH_URL: ${{ vars.MIRROR_SSH_URL }}
