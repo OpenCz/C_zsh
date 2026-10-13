@@ -55,8 +55,8 @@ jobs:
         id: release
         with:
           target-branch: ${{ github.event.workflow_run.head_branch }}
-          config-file: release-config.json
-          manifest-file: .release-manifest.json
+          config-file: .github/release-config.json
+          manifest-file: .github/.release-manifest.json
 
   release-artefact:
     runs-on: ubuntu-latest
